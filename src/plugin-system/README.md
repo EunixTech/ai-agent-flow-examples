@@ -13,6 +13,19 @@ npm install
 npx ts-node src/plugin-system/index.ts
 ```
 
+## Architecture Overview
+
+```mermaid
+graph TD
+    A[Flow] --> B[WeatherNode]
+    A --> C[ActionNode]
+    B -->|addTransition| C
+    D[MongoContextStore] -.->|persists| E[Context]
+    F[AnthropicProvider] -.->|alternative to| G[OpenAI Provider]
+    E --> A
+    H[Runner] -->|executes| A
+```
+
 ## Testing Instructions
 
 1. **Basic Testing**:
