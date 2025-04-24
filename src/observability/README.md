@@ -1,29 +1,45 @@
 # 📊 Observability Example
 
-This example demonstrates how to integrate:
+This example demonstrates how to integrate observability features into your AI agent flows:
 
 - ✅ Structured logging with `winston`
 - 📈 Metrics collection with `prom-client`
-- 🌐 `/metrics` endpoint for Prometheus scraping
+- 🌐 Express server with `/metrics` endpoint for Prometheus scraping
 
 ## Run the Example
 
 ```bash
 npm install
-npx ts-node examples/observability/index.ts
+npx ts-node src/observability/index.ts
 ```
 
-Then visit: http://localhost:3001/metrics
+Then visit: http://localhost:9100/metrics
 
-## What You’ll See
+## What You'll See
 
-- Node executions logged to the console
-- A Prometheus /metrics endpoint with:
-- node_execution_total
-- flow_duration_seconds
+- Node executions logged to the console with Winston
+- A Prometheus-compatible `/metrics` endpoint with:
+  - `flow_runs_total` counter
+  - Default Node.js metrics (memory, CPU, etc.)
 
-## Concepts Covered
+## Code Overview
 
-- winston for real-time JSON logging
-- prom-client for exposing metrics
-- Flow and node instrumentation
+The example creates a simple flow with a single node that:
+1. Logs execution information using Winston
+2. Increments a Prometheus counter for each flow run
+3. Exposes metrics via an Express server
+
+## Key Concepts
+
+- **Winston Logger**: Configured for console output with simple formatting
+- **Prometheus Metrics**: Using `prom-client` to track flow executions
+- **Express Server**: Lightweight server to expose metrics endpoint
+- **Flow Instrumentation**: Adding observability to your flows without changing core logic
+
+## Extending This Example
+
+You can enhance this example by:
+- Adding custom metrics for specific node types
+- Implementing more detailed logging
+- Adding tracing with OpenTelemetry
+- Creating dashboards with Grafana

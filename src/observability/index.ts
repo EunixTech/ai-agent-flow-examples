@@ -1,5 +1,6 @@
 // observability/index.ts
-import { Flow, Runner, ActionNode } from 'ai-agent-flow';
+import { Flow, Runner } from 'ai-agent-flow';
+import { ActionNode } from 'ai-agent-flow/nodes/action';
 import winston from 'winston';
 import client from 'prom-client';
 import express from 'express';
