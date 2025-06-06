@@ -21,5 +21,5 @@ If `REDIS_URL` is not defined or Redis is unavailable, the example falls back to
 the in-memory `MessageBus`.
 
 ```bash
-npx ts-node src/multi-agent/index.ts
+npm run example src/multi-agent/index.ts
 ```

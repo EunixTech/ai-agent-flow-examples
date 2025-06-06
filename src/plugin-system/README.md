@@ -10,7 +10,7 @@ This example demonstrates how to extend the AI Agent Flow framework with custom 
 
 ```bash
 npm install
-npx ts-node src/plugin-system/index.ts
+npm run example src/plugin-system/index.ts
 ```
 
 To enable MongoDB and Anthropic integrations, install the extra packages and
@@ -34,14 +34,14 @@ graph TD
 1. **Basic Testing**:
    ```bash
    # Run the example with default settings
-   npx ts-node src/plugin-system/index.ts
+   npm run example src/plugin-system/index.ts
    ```
    You should see output showing the WeatherNode executing and the flow result.
 
 2. **Running the Test Script**:
    ```bash
    # Run the dedicated test script
-   npx ts-node src/plugin-system/test.ts
+   npm run example src/plugin-system/test.ts
    ```
    This script provides a more focused test of the custom components with detailed output.
 
@@ -137,7 +137,7 @@ After installing the extra packages and uncommenting the lines mentioned above,
 run the example with:
 
 ```bash
-npx ts-node src/plugin-system/index.ts
+npm run example src/plugin-system/index.ts
 ```
 
 ## Troubleshooting

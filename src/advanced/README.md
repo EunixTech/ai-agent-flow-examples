@@ -3,5 +3,5 @@
 This example demonstrates conditional branching using a `DecisionNode`.
 
 ```bash
-npx ts-node src/advanced/index.ts
+npm run example src/advanced/index.ts
 ```

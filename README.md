@@ -31,7 +31,7 @@ Then run it with:
 
 ```bash
 npm install
-npx ts-node examples/quick-start.ts
+npm run example examples/quick-start.ts
 ```
 
 
@@ -64,8 +64,8 @@ To run the observability example:
 2. Run: `npm start`
 3. Access metrics at `http://localhost:9100/metrics`
 
-`npm start` executes this observability example. Use `npx ts-node` for the
-other examples.
+`npm start` executes this observability example. Use `npm run example <path>`
+for the other examples.
 
 Programmatic usage:
 
@@ -99,7 +99,7 @@ graph LR
 Run with:
 
 ```bash
-npx ts-node src/plugin-system/index.ts
+npm run example src/plugin-system/index.ts
 ```
 
 ### Streaming Example
@@ -122,7 +122,7 @@ graph TD
 To run the streaming example:
 
 1. Set up your OpenAI API key in `.env`
-2. Run: `npx ts-node src/streaming/index.ts`
+2. Run: `npm run example src/streaming/index.ts`
 
 
 ### Advanced Example
@@ -132,7 +132,7 @@ Located in [`src/advanced/`](src/advanced/), this example shows conditional bran
 Run with:
 
 ```bash
-npx ts-node src/advanced/index.ts
+npm run example src/advanced/index.ts
 ```
 
 ### Chatbot Example
@@ -142,7 +142,7 @@ Located in [`src/chatbot/`](src/chatbot/), this is a tiny chatbot that tracks co
 Run with:
 
 ```bash
-npx ts-node src/chatbot/index.ts
+npm run example src/chatbot/index.ts
 ```
 
 ### Data Pipeline Example
@@ -152,7 +152,7 @@ Located in [`src/data-pipeline/`](src/data-pipeline/), this example processes it
 Run with:
 
 ```bash
-npx ts-node src/data-pipeline/index.ts
+npm run example src/data-pipeline/index.ts
 ```
 
 ### Debug UI Example
@@ -162,7 +162,7 @@ Located in [`src/debug-ui/`](src/debug-ui/), this example attaches an update han
 Run with:
 
 ```bash
-npx ts-node src/debug-ui/index.ts
+npm run example src/debug-ui/index.ts
 ```
 
 ### Express Server Example
@@ -172,7 +172,7 @@ Located in [`src/express-server/`](src/express-server/), this example exposes a 
 Run with:
 
 ```bash
-npx ts-node -e "import { startServer } from './src/express-server/index.ts'; startServer();"
+npm run example -e "import { startServer } from './src/express-server/index.ts'; startServer();"
 ```
 
 ### Memory Store Example
@@ -182,7 +182,7 @@ Located in [`src/memory-store/`](src/memory-store/), this example stores the flo
 Run with:
 
 ```bash
-npx ts-node src/memory-store/index.ts
+npm run example src/memory-store/index.ts
 ```
 
 ### Multi-Agent Example
@@ -192,7 +192,7 @@ Located in [`src/multi-agent/`](src/multi-agent/), this example demonstrates age
 Run with:
 
 ```bash
-npx ts-node src/multi-agent/index.ts
+npm run example src/multi-agent/index.ts
 ```
 
 ### Multi-Flow Example
@@ -202,7 +202,7 @@ Located in [`src/multi-flow/`](src/multi-flow/), this example runs multiple flow
 Run with:
 
 ```bash
-npx ts-node src/multi-flow/index.ts
+npm run example src/multi-flow/index.ts
 ```
 ### Tool Calls Example
 
@@ -212,7 +212,7 @@ invoke a custom tool within a flow.
 Run with:
 
 ```bash
-npx ts-node src/tool-calls/index.ts
+npm run example src/tool-calls/index.ts
 ```
 
 ### HTTP Request Example
@@ -222,7 +222,7 @@ Located in [`src/http-request/`](src/http-request/), this example fetches JSON f
 Run with:
 
 ```bash
-npx ts-node src/http-request/index.ts
+npm run example src/http-request/index.ts
 ```
 
 ### Interactive CLI Example
@@ -232,7 +232,7 @@ Located in [`src/interactive-cli/`](src/interactive-cli/), this example runs a c
 Run with:
 
 ```bash
-npx ts-node src/interactive-cli/index.ts
+npm run example src/interactive-cli/index.ts
 ```
 
 ## Architecture Overview
@@ -269,7 +269,7 @@ graph TD
 ## Testing the Examples
 
 Running `npm test` executes a Mocha suite that spawns each short-lived example
-using `npx ts-node`. The tests assert that these scripts exit with status `0`,
+using `npm run example`. The tests assert that these scripts exit with status `0`,
 so failures indicate an example crashed or threw an exception. Examples that run
 servers, such as the observability and Express server demos, are excluded from
 the test suite.
