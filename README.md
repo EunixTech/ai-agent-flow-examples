@@ -198,9 +198,10 @@ graph TD
 
 ## Setup
 
-1. Install dependencies: `npm install`
-2. Run: `npm start` *(runs the observability example)*
-3. Test: `npm test`
+1. Copy `.env.example` to `.env` and set the required values
+2. Install dependencies: `npm install`
+3. Run: `npm start` *(runs the observability example)*
+4. Test: `npm test`
 
 ## Scripts
 
