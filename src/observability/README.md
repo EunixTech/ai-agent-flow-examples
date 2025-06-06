@@ -10,7 +10,7 @@ This example demonstrates how to integrate observability features into your AI a
 
 ```bash
 npm install
-npx ts-node src/observability/index.ts
+npm run example src/observability/index.ts
 ```
 
 Then visit: http://localhost:9100/metrics

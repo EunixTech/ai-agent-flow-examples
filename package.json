@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "ts-node src/observability/index.ts",
+    "example": "ts-node",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",

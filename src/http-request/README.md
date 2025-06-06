@@ -3,5 +3,5 @@
 Fetches JSON from a public API using a `HttpNode`.
 
 ```bash
-npx ts-node src/http-request/index.ts
+npm run example src/http-request/index.ts
 ```

@@ -28,7 +28,7 @@ This example demonstrates how to use streaming responses from OpenAI using the A
 
 3. Run the example:
    ```bash
-   npx ts-node src/streaming/index.ts
+   npm run example src/streaming/index.ts
    ```
 
 ## What to Expect
