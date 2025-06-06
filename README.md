@@ -260,6 +260,9 @@ Feel free to contribute by:
 3. Adding documentation
 4. Submitting bug reports
 
+For setup instructions, style commands, and pull request guidelines, see
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
