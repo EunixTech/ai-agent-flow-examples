@@ -149,6 +149,16 @@ Run with:
 ```bash
 npx ts-node src/multi-agent/index.ts
 ```
+
+### Multi-Flow Example
+
+Located in [`src/multi-flow/`](src/multi-flow/), this example runs multiple flows concurrently.
+
+Run with:
+
+```bash
+npx ts-node src/multi-flow/index.ts
+```
 ### Tool Calls Example
 
 Located in [`src/tool-calls/`](src/tool-calls/), this example demonstrates how to
