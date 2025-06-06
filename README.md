@@ -225,6 +225,16 @@ Run with:
 npx ts-node src/http-request/index.ts
 ```
 
+### Interactive CLI Example
+
+Located in [`src/interactive-cli/`](src/interactive-cli/), this example runs a conversational loop in your terminal.
+
+Run with:
+
+```bash
+npx ts-node src/interactive-cli/index.ts
+```
+
 ## Architecture Overview
 
 ```mermaid
