@@ -26,11 +26,11 @@ register.registerMetric(flowRunCounter);
 const context = {
   conversationHistory: [],
   data: {},
-  metadata: {}
+  metadata: {},
 };
 
 // ⚙️ Create Simple Flow
-const greetNode = new ActionNode('greet', async (context) => {
+const greetNode = new ActionNode('greet', async () => {
   logger.info('Executing greet node...');
   return { type: 'success', output: 'Hello from the observable world!' };
 });

@@ -68,6 +68,11 @@ To run the streaming example:
 1. Set up your OpenAI API key in `.env`
 2. Run: `npm start`
 
+### Tool Calls Example
+
+Located in [`src/tool-calls/`](src/tool-calls/), this example demonstrates how to
+invoke a custom tool within a flow.
+
 ## Architecture Overview
 
 ```mermaid
@@ -76,6 +81,7 @@ graph TD
     B --> C[Observability]
     B --> D[Plugin System]
     B --> E[Streaming]
+    B --> K[Tool Calls]
     C --> F[Logging]
     C --> G[Metrics]
     D --> H[Custom Nodes]
@@ -121,11 +127,13 @@ The streaming example demonstrates how to use the `LLMNode` for real-time stream
 ### How to Run
 
 1. Ensure your `.env` file contains the OpenAI API key:
+
    ```
    OPENAI_API_KEY=your-api-key-here
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
