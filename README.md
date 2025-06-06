@@ -160,6 +160,16 @@ Run with:
 npx ts-node src/tool-calls/index.ts
 ```
 
+### HTTP Request Example
+
+Located in [`src/http-request/`](src/http-request/), this example fetches JSON from an API using `HttpNode`.
+
+Run with:
+
+```bash
+npx ts-node src/http-request/index.ts
+```
+
 ## Architecture Overview
 
 ```mermaid
