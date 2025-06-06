@@ -6,17 +6,15 @@ import { Flow, Runner, Context } from 'ai-agent-flow';
 import { LLMNode } from 'ai-agent-flow/nodes/llm';
 import { OpenAI } from 'openai';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize OpenAI client (1.4.0 and above automatically picks env vars)
+new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function main() {
   // Create a new flow with a name
   const flow = new Flow('streaming-flow');
 
   // Replace ActionNode with LLMNode for streaming
-  const streamingNode = new LLMNode('poem-generator', (context) => {
+  const streamingNode = new LLMNode('poem-generator', () => {
     return 'Write a short poem about artificial intelligence, one word at a time.';
   });
 

@@ -1,1 +1,1 @@
-# deuug ui
+# debug ui
