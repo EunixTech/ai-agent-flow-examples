@@ -1,7 +1,23 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import { Flow, Runner, Context, MessageBus } from 'ai-agent-flow';
 import { ActionNode } from 'ai-agent-flow/nodes/action';
+import { RedisMessageBus } from 'ai-agent-flow/utils/redis-message-bus';
 
-const bus = new MessageBus();
+let bus: MessageBus;
+if (process.env.REDIS_URL) {
+  try {
+    bus = new RedisMessageBus({ url: process.env.REDIS_URL });
+  } catch (err) {
+    console.warn(
+      'Failed to connect to Redis, falling back to in-memory MessageBus',
+      err
+    );
+    bus = new MessageBus();
+  }
+} else {
+  bus = new MessageBus();
+}
 
 bus.subscribe('agent2', (sender, message) => {
   console.log(`Agent2 received from ${sender}: ${message}`);
