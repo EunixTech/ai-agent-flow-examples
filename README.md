@@ -68,6 +68,34 @@ To run the streaming example:
 1. Set up your OpenAI API key in `.env`
 2. Run: `npm start`
 
+
+### Advanced Example
+
+Located in [`src/advanced/`](src/advanced/), this example shows conditional branching with a `DecisionNode`.
+
+### Chatbot Example
+
+Located in [`src/chatbot/`](src/chatbot/), this is a tiny chatbot that tracks conversation history.
+
+### Data Pipeline Example
+
+Located in [`src/data-pipeline/`](src/data-pipeline/), this example processes items in batches using `BatchNode`.
+
+### Debug UI Example
+
+Located in [`src/debug-ui/`](src/debug-ui/), this example attaches an update handler for debugging flows.
+
+### Express Server Example
+
+Located in [`src/express-server/`](src/express-server/), this example exposes a flow via an Express endpoint.
+
+### Memory Store Example
+
+Located in [`src/memory-store/`](src/memory-store/), this example stores the flow context in memory between runs.
+
+### Multi-Agent Example
+
+Located in [`src/multi-agent/`](src/multi-agent/), this example demonstrates agent communication via `MessageBus`.
 ### Tool Calls Example
 
 Located in [`src/tool-calls/`](src/tool-calls/), this example demonstrates how to
@@ -116,35 +144,3 @@ Feel free to contribute by:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Streaming Example
-
-The streaming example demonstrates how to use the `LLMNode` for real-time streaming of responses from OpenAI. It showcases:
-
-- **Real-time Streaming**: Stream responses word by word.
-- **Partial Updates**: Handle partial updates using the `.onUpdate()` handler.
-- **Integration**: Seamlessly integrate streaming into AI workflows.
-
-### How to Run
-
-1. Ensure your `.env` file contains the OpenAI API key:
-
-   ```
-   OPENAI_API_KEY=your-api-key-here
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Run the example:
-   ```bash
-   npx ts-node src/streaming/index.ts
-   ```
-
-### Key Concepts
-
-- **Streaming**: Receive responses in chunks instead of waiting for the complete response.
-- **onUpdate Handler**: Process each chunk of the streamed response in real-time.
-- **Real-time Processing**: Display content as it arrives.

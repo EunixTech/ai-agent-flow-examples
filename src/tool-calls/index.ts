@@ -3,7 +3,8 @@ import { ActionNode } from 'ai-agent-flow/nodes/action';
 
 async function main() {
   const toolNode = new ActionNode('tool', async (context) => {
-    const name = context.data.name || 'unknown';
+    const raw = context.data.name;
+    const name = typeof raw === 'string' ? raw : 'unknown';
     return { type: 'success', output: name.toUpperCase() };
   });
 
