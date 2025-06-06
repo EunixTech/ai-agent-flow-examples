@@ -1,8 +1,8 @@
 # AI Agent Flow Examples
 
-This repository contains example implementations and usage patterns for the [AI Agent Flow](https://github.com/your-org/ai-agent-flow) framework. Each example demonstrates different features and capabilities of the framework.
+This repository contains example implementations and usage patterns for the [AI Agent Flow](https://github.com/EunixTech/ai-agent-flow) framework ([available on npm](https://www.npmjs.com/package/ai-agent-flow)). Each example demonstrates different features and capabilities of the framework.
 
-The package is published to npm under the name `ai-agent-flow-examples`.
+The package is published to npm as [`ai-agent-flow-examples`](https://www.npmjs.com/package/ai-agent-flow-examples).
 
 ## Examples
 
