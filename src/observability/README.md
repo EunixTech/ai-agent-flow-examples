@@ -15,6 +15,18 @@ npx ts-node src/observability/index.ts
 
 Then visit: http://localhost:9100/metrics
 
+### Programmatic Usage
+
+You can also start the server from your own code:
+
+```ts
+import { start } from './src/observability/index';
+
+const { server, runPromise } = start();
+await runPromise;
+server.close();
+```
+
 ## What You'll See
 
 - Node executions logged to the console with Winston
