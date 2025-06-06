@@ -210,6 +210,14 @@ graph TD
 - `npm run test`: Run tests
 - `npm run format`: Run Prettier
 
+## Testing the Examples
+
+Running `npm test` executes a Mocha suite that spawns each short-lived example
+using `npx ts-node`. The tests assert that these scripts exit with status `0`,
+so failures indicate an example crashed or threw an exception. Examples that run
+servers, such as the observability and Express server demos, are excluded from
+the test suite.
+
 ## Inspecting Flows
 
 You can inspect any example without running it by using the CLI that ships with
