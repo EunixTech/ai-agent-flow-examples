@@ -2,9 +2,44 @@
 
 This repository contains example implementations and usage patterns for the [AI Agent Flow](https://github.com/EunixTech/ai-agent-flow) framework ([available on npm](https://www.npmjs.com/package/ai-agent-flow)). Each example demonstrates different features and capabilities of the framework.
 
+
 The package is published to npm as [`ai-agent-flow-examples`](https://www.npmjs.com/package/ai-agent-flow-examples).
 
+## Quick Start
+
+Create `src/quick-start.ts` with a minimal flow:
+
+```ts
+import { Flow, Runner } from 'ai-agent-flow';
+import { ActionNode } from 'ai-agent-flow/nodes/action';
+
+const helloNode = new ActionNode('start', async () => ({
+  type: 'success',
+  output: 'Hello world'
+}));
+
+const flow = new Flow('quick-start')
+  .addNode(helloNode)
+  .setStartNode('start');
+
+const context = { conversationHistory: [], data: {}, metadata: {} };
+
+new Runner().runFlow(flow, context).then(console.log);
+```
+
+Then run it with:
+
+```bash
+npm install
+npx ts-node examples/quick-start.ts
+```
+
+
 ## Examples
+
+### Quick Start
+
+See the [Quick Start](#quick-start) section for a minimal example.
 
 ### Observability Example
 
