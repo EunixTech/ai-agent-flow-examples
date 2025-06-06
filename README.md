@@ -210,6 +210,28 @@ graph TD
 - `npm run test`: Run tests
 - `npm run format`: Run Prettier
 
+## Inspecting Flows
+
+You can inspect any example without running it by using the CLI that ships with
+`ai-agent-flow`:
+
+```bash
+npx aaflow inspect src/observability/index.ts
+```
+
+The command prints information about the flow such as its ID and the nodes it
+contains. A successful run looks similar to:
+
+```text
+✓ Loaded flow from src/observability/index.ts
+Nodes:
+  - greet (ActionNode)
+```
+
+If `npx` cannot find the `aaflow` command or you see an `E404` error, make sure
+dependencies are installed (`npm install`) and that `node_modules/.bin` is in
+your `PATH`.
+
 ## Contributing
 
 Feel free to contribute by:
