@@ -90,6 +90,34 @@ You can enhance this example by:
 - Creating additional LLM providers (e.g., for local models)
 - Building a plugin registry system for dynamic loading
 
+## Dynamic Plugins
+
+You can load plugins at runtime by passing their paths to the `Runner`
+constructor. A plugin module exports an object with `name` and `setup`.
+
+```javascript
+// src/plugin-system/logger-plugin.js
+module.exports = {
+  default: {
+    name: 'logger',
+    setup(runner) {
+      runner.onUpdate((u) => console.log('[PLUGIN]', u));
+    },
+  },
+};
+```
+
+Load the plugin when creating a runner:
+
+```typescript
+import path from 'node:path';
+import { Runner } from 'ai-agent-flow';
+
+const runner = new Runner(3, 1000, undefined, [
+  path.join(__dirname, 'logger-plugin.js'),
+]);
+```
+
 ## Dependencies
 
 To use all features in this example, you'll need to install:
