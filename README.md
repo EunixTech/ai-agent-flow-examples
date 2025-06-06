@@ -127,7 +127,7 @@ Located in [`src/express-server/`](src/express-server/), this example exposes a 
 Run with:
 
 ```bash
-npx ts-node src/express-server/index.ts
+npx ts-node -e "import { startServer } from './src/express-server/index.ts'; startServer();"
 ```
 
 ### Memory Store Example
