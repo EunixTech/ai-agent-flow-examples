@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/no-empty-function */
 import { Flow, Runner, Context, Node, NodeResult } from 'ai-agent-flow';
 import { ActionNode } from 'ai-agent-flow/nodes/action';
+import path from 'node:path';
 // These imports are commented out to avoid linter errors without the actual packages
 // import { MongoClient } from 'mongodb';
 // import { Anthropic } from '@anthropic-ai/sdk';
@@ -158,8 +159,10 @@ async function runExample() {
   // const completion = await anthropicProvider.generateCompletion('What is the weather like?');
   // console.log('Anthropic completion:', completion);
 
-  // Run the flow
-  const runner = new Runner();
+  // Run the flow with a custom logger plugin
+  const runner = new Runner(3, 1000, undefined, [
+    path.join(__dirname, 'logger-plugin.js'),
+  ]);
   const result = await runner.runFlow(flow, context);
 
   console.log('Flow result:', result);
