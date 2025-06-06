@@ -27,10 +27,20 @@ To run the observability example:
 
 1. Install dependencies: `npm install`
 2. Run: `npm start`
-3. Access metrics at `http://localhost:3000/metrics`
+3. Access metrics at `http://localhost:9100/metrics`
 
 `npm start` executes this observability example. Use `npx ts-node` for the
 other examples.
+
+Programmatic usage:
+
+```ts
+import { start } from './src/observability/index';
+
+const { server, runPromise } = start();
+await runPromise;
+server.close();
+```
 
 ### Plugin System Example
 

@@ -4,6 +4,7 @@ import { ActionNode } from 'ai-agent-flow/nodes/action';
 import winston from 'winston';
 import client from 'prom-client';
 import express from 'express';
+import { Server } from 'http';
 
 // 📝 Setup Winston Logger
 const logger = winston.createLogger({
@@ -49,6 +50,7 @@ const run = async () => {
 
   logger.info(`Flow result: ${JSON.stringify(result)}`);
   console.log(result);
+  return result;
 };
 
 // 🧪 Start Metrics Server
@@ -58,7 +60,18 @@ app.get('/metrics', async (req, res) => {
   res.end(await register.metrics());
 });
 
-app.listen(9100, () => {
-  logger.info('Prometheus metrics available at http://localhost:9100/metrics');
-  run();
-});
+export function start(): { server: Server; runPromise: Promise<unknown> } {
+  const server = app.listen(9100, () => {
+    logger.info(
+      'Prometheus metrics available at http://localhost:9100/metrics',
+    );
+  });
+  const runPromise = run();
+  return { server, runPromise };
+}
+
+// If executed directly, start the server and run the flow
+if (require.main === module) {
+  const { server, runPromise } = start();
+  runPromise.finally(() => server.close());
+}
