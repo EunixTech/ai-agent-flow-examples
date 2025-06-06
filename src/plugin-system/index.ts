@@ -49,6 +49,8 @@ export class WeatherNode extends Node {
 }
 
 // MongoContextStore to store context in MongoDB
+// This is a simplified placeholder implementation used for the example.
+// Replace with a real MongoDB client if you need persistence.
 export class MongoContextStore {
   private client: any; // MongoClient type
   private db: any;
@@ -89,6 +91,8 @@ export class MongoContextStore {
 }
 
 // AnthropicProvider as an alternative to OpenAI
+// This class is a minimal stub. It simulates the Anthropic SDK
+// so the example can run without the real dependency.
 export class AnthropicProvider {
   private client: any; // Anthropic type
 

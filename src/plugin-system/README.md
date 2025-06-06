@@ -13,6 +13,9 @@ npm install
 npx ts-node src/plugin-system/index.ts
 ```
 
+To enable MongoDB and Anthropic integrations, install the extra packages and
+uncomment the relevant lines (see below) before running.
+
 ## Architecture Overview
 
 ```mermaid
@@ -43,15 +46,15 @@ graph TD
    This script provides a more focused test of the custom components with detailed output.
 
 3. **Testing with MongoDB** (requires MongoDB installation):
-   - Uncomment the MongoDB-related code in index.ts
+   - Uncomment lines `153-155` and `171` in `src/plugin-system/index.ts`
    - Install MongoDB dependencies: `npm install mongodb`
    - Start a local MongoDB instance
    - Run the example again
 
 4. **Testing with Anthropic** (requires API key):
-   - Uncomment the Anthropic-related code in index.ts
+   - Uncomment lines `158-160` in `src/plugin-system/index.ts`
    - Install Anthropic SDK: `npm install @anthropic-ai/sdk`
-   - Replace 'your-anthropic-api-key' with your actual API key
+   - Replace `your-anthropic-api-key` with your actual API key
    - Run the example again
 
 5. **Customizing the Example**:
@@ -127,6 +130,15 @@ npm install mongodb @anthropic-ai/sdk
 ```
 
 Note: The MongoDB and Anthropic integrations are commented out in the example by default to avoid requiring external services or API keys.
+
+### Running with MongoDB and Anthropic
+
+After installing the extra packages and uncommenting the lines mentioned above,
+run the example with:
+
+```bash
+npx ts-node src/plugin-system/index.ts
+```
 
 ## Troubleshooting
 
